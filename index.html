@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hikora.xyz</title>
+
+    <link rel="icon" type="image/png" href="hikora.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+</body>
+
+</html>
+
+<body>
+
+    <button onclick="toggleDarkMode()" id="mode-btn">Theme</button>
+
+    <header>
+        <h1>hikora.xyz</h1>
+        <p>i like to think im cool</p>
+    </header>
+
+    <nav>
+        <a onclick="showSection('about', this)" class="active">About</a>
+        <a onclick="showSection('socials', this)">Socials</a>
+        <a onclick="showSection('media', this)">Media</a>
+        <a onclick="showSection('projects', this)">Projects</a>
+    </nav>
+
+    <main>
+        <section id="about" class="content-section active">
+            <h3>About</h3>
+            <p>Hello!! I am Mizu, or Hikora.</p>
+            <p>I play games (AKEF, ZZZ, FFXIV, OW), watch anime, and listen to music.</p>
+            <p>If you ever want to talk about games with me, you know where to find me</p>
+        </section>
+
+        <section id="socials" class="content-section">
+            <h3>Socials</h3>
+            <ul>
+                <li><a href="https://x.com/hikora_xyz" target="_blank">Twitter / X</a></li>
+                <li><a href="https://bsky.app/profile/hikora-xyz.bsky.social" target="_blank">Bluesky</a></li>
+                <li><a href="https://discord.gg/YFMZrhKs4W">My Discord Server</a></li>
+                <li>Discord: mizu_like_water</li>
+            </ul>
+        </section>
+
+        <section id="projects" class="content-section">
+            <h3>Projects</h3>
+            <p>Nothing here for now. Check out my <a href="https://github.com/hikora-xyz">Github</a> for any updates not here.</p>
+        </section>
+
+        <section id="media" class="content-section">
+            <h3>Media</h3>
+            <ul>
+                <li><a href="https://letterboxd.com/mizu_like_water/" target="_blank">Letterboxd</a></li>
+                <li><a href="https://www.serializd.com/user/mizu_like_water/" target="_blank">Serializd</a></li>
+                <li><a href="https://anilist.co/user/mizulikewater/" target="_blank">Anilist</a></li>
+                <li><a href="https://myanimelist.net/profile/mizu_like_water/" target="_blank">MyAnimeList</a></li>
+                <li><a href="https://www.last.fm/user/mizu-like-water/" target="_blank">Last.fm</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        function toggleDarkMode() {
+            const isDark = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+
+        function showSection(sectionId, el) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            el.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
