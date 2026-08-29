@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Specs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <button onclick="toggleDarkMode()" id="mode-btn">Theme</button>
+
+    <header>
+        <h1>PC Part List and Setup</h1>
+    </header>
+
+    <nav>
+        <a onclick="showSection('desktop', this)" class="active">Desktop</a>
+        <a onclick="showSection('laptop', this)">Laptop</a>
+        <a onclick="showSection('peripherals', this)">Peripherals</a>
+    </nav>
+
+    <main>
+        <section id="desktop" class="content-section active">
+            <h3>Main PC</h3>
+            <ul>
+                <li><strong>cpu:</strong> AMD Ryzen 7 5800X</li>
+                <li><strong>gpu:</strong> MSI AMD Radeon RX 6800 XT Gaming Z Trio</li>
+                <li><strong>ram:</strong> Corsair Vengeance LPX 32GB (2x16GB) 3600MT/s</li>
+                <li><strong>mobo:</strong> MSI MPG B550 GAMING PLUS</li>
+                <li><strong>cooler:</strong> Noctua NH-D15 G2 chromax.Black</li>
+                <li><strong>ssd:</strong> Sasmung SSD 990 EVO Plus 4TB</li>
+                <li><strong>case:</strong> NZXT H5 Flow (2024)</li>
+                <li><strong>psu:</strong> Seasonic Vertex PX-1000 1000W</li>
+            </ul>
+
+            <h3>Server PC</h3>
+            <ul>
+                <li><strong>cpu:</strong> Intel Core i7-7700K</li>
+                <li><strong>gpu:</strong> ASROCK Intel Arc B570</li>
+                <li><strong>ram:</strong> Corsair Vengeance LPX 16GB (2x8GB) DDR4 2400MT/s</li>
+                <li><strong>mobo:</strong> ASROCK Z270 Killer SLI</li>
+                <li><strong>cooler:</strong> Intel Stock Cooler</li>
+                <li><strong>ssd:</strong> WD Blue SN580 1TB</li>
+                <li><strong>case:</strong> NZXT S340 (2024)</li>
+                <li><strong>psu:</strong> Corsair RMe Series RM750e 750W</li>
+                <li><strong>additional storage:</strong> Assorted HDD</li>
+            </ul>
+        </section>
+
+        <section id="laptop" class="content-section">
+            <h3>Laptop</h3>
+            <p>Lenovo Legion Pro 5i 16" Gaming Laptop WQXGA</p>
+                <li><strong>cpu:</strong> Intel Core i7-13700HX</li>
+                <li><strong>gpu:</strong> NVIDIA GeForce RTX 4070 8GB (Mobile)</li>
+                <li><strong>ram:</strong> Crucial 32GB (2x16GB) DDR5 5600MT/s</li>
+            </p>
+        </section>
+        
+        <section id="peripherals" class="content-section">
+            <h3>Peripherals</h3>
+        </section>
+    </main>
+
+    <script>
+        function toggleDarkMode() {
+            const isDark = document.body.classList.toggle('dark-mode');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            document.body.classList.add('dark-mode');
+        }
+
+        function showSection(sectionId, el) {
+            document.querySelectorAll('.content-section').forEach(s => s.classList.remove('active'));
+            document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            el.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
