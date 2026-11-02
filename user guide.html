@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kani - User Guide</title>
+    <link rel="icon" type="image/png" href="kani.png">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f9fafb; }
+        header { background-color: #ffffff; border-bottom: 1px solid #e5e7eb; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: #2563eb; text-decoration: none; }
+        nav a { margin-left: 1.5rem; text-decoration: none; color: #4b5563; font-weight: 500; }
+        nav a:hover { color: #2563eb; }
+        main { max-width: 800px; margin: 2rem auto; padding: 2rem; background-color: #ffffff; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        h1, h2 { color: #111827; }
+        h1 { font-size: 2rem; margin-top: 0; border-bottom: 1px solid #e5e7eb; padding-bottom: 1rem; }
+        h2 { font-size: 1.5rem; margin-top: 2rem; }
+        p, li { color: #4b5563; }
+        code { background-color: #f3f4f6; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; font-size: 0.9em; }
+        footer { text-align: center; padding: 2rem; color: #6b7280; font-size: 0.875rem; border-top: 1px solid #e5e7eb; margin-top: 3rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Kani</a>
+        <nav>
+            <a href="index.html">User Guide</a>
+            <a href="tos.html">TOS & Privacy</a>
+        </nav>
+    </header>
+    <main>
+        <h1>User Guide</h1>
+        <p>Welcome to the official documentation for Kani, your Discord automation bot for YouTube livestreams and personal reminders.</p>
+        
+        <h2>Getting Started</h2>
+        <p>To use Kani, your server administrator must first invite the bot and grant it the <code>Manage Events</code> permission to create scheduled events automatically.</p>
+
+        <h2>Commands</h2>
+        <ul>
+            <li><code>/addchannel &lt;channel_id&gt;</code> - Add a YouTube channel ID to monitor for upcoming streams.</li>
+            <li><code>/removechannel &lt;channel_id&gt;</code> - Remove a YouTube channel from the monitor list.</li>
+            <li><code>/setping &lt;youtube_channel_id&gt; &lt;ping_channel&gt; &lt;ping_role&gt;</code> - Set the Discord text channel and role to ping when a stream goes live.</li>
+            <li><code>/refresh</code> - Manually check monitored YouTube channels for new streams and create events.</li>
+            <li><code>/test &lt;youtube_channel_id&gt;</code> - Test the live ping message to ensure permissions and settings are correct.</li>
+            <li><code>/remind &lt;duration&gt; &lt;message&gt;</code> - Set a persistent personal reminder (e.g., <code>15m</code>, <code>2h</code>, <code>1d</code>).</li>
+        </ul>
+
+        <h2>Automated Features</h2>
+        <p>Kani checks YouTube for upcoming streams every 2 hours and creates Discord Scheduled Events. It also checks for live statuses every 5 minutes to send alerts and updates the original message when the stream ends.</p>
+    </main>
+    <footer>
+        &copy; 2026 Kani Bot. All rights reserved.
+    </footer>
+</body>
+</html>
